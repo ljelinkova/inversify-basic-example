@@ -1,8 +1,19 @@
-import Battle from "./interfaces/battle";
-import container from "./config/ioc_config";
 import SERVICE_IDENTIFIER from "./constants/identifiers";
+import {
+    container,
+    warriorModule,
+    weaponModule
+} from "./config/ioc_config";
+import { Warrior } from "./interfaces/warrior";
+
+container.load(warriorModule);
+container.load(weaponModule);
 
 // Composition root
-let epicBattle = container.get<Battle>(SERVICE_IDENTIFIER.BATTLE);
+let warrior = container.get<Warrior>(SERVICE_IDENTIFIER.WARRIOR);
+let weapons = warrior.getWeapons();
 
-console.log(epicBattle.fight());
+console.log("Available weapons for " + warrior.name);
+for (let weapon of weapons) {
+    console.log(weapon.name);
+}

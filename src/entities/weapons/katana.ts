@@ -1,6 +1,6 @@
 import { injectable } from "inversify";
 
-import { Weapon } from "../../interfaces";
+import { Weapon } from "../../interfaces/weapon";
 
 @injectable()
 export class Katana implements Weapon {

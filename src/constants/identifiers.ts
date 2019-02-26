@@ -1,5 +1,5 @@
 const SERVICE_IDENTIFIER = {
-    BATTLE: Symbol.for("Battle"),
+    CONTRIBUTION_PROVIDER: Symbol("ContributionProvider"),
     WARRIOR: Symbol.for("Warrior"),
     WEAPON: Symbol.for("Weapon")
 };
